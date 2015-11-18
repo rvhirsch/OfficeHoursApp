@@ -9,15 +9,6 @@ var _ = require('lodash'),
 // list of valid formats for the logging
 var validFormats = ['combined', 'common', 'dev', 'short', 'tiny'];
 
-// build logger service
-var logger = {
-  getFormat: getLogFormat, // log format to use
-  getOptions: getLogOptions // log options to use
-};
-
-// export the logger service
-module.exports = logger;
-
 /**
  * The format to use with the logger
  *
@@ -107,3 +98,12 @@ function getLogOptions () {
 
   return options;
 }
+
+// build logger service
+var logger = {
+  getFormat: getLogFormat, // log format to use
+  getOptions: getLogOptions // log options to use
+};
+
+// export the logger service
+module.exports = logger;
