@@ -16,18 +16,18 @@ angular.module('hours').config(['$stateProvider',
       })
       .state('hours.create', {
         url: '/create',
-        templateUrl: 'modules/hours/client/views/create-hour.client.view.html',
+        templateUrl: 'modules/hours/client/views/input-hours.client.view.html',
         data: {
           roles: ['user', 'admin']
         }
       })
       .state('hours.view', {
         url: '/:hourId',
-        templateUrl: 'modules/hours/client/views/view-hour.client.view.html'
+        templateUrl: 'modules/hours/client/views/view-hours.client.view.html'
       })
       .state('hours.edit', {
         url: '/:hourId/edit',
-        templateUrl: 'modules/hours/client/views/edit-hour.client.view.html',
+        templateUrl: 'modules/hours/client/views/edit-hours.client.view.html',
         data: {
           roles: ['user', 'admin']
         }
