@@ -18,7 +18,9 @@ angular.module('hours').controller('HoursController', ['$scope', '$stateParams',
       // Create new Hour object
       var hour = new Hours({
         title: this.title,
-        content: this.content
+        content: this.content,
+        classesTaught: this.classesTaught,
+        office: this.office
       });
 
       // Redirect after save
@@ -28,6 +30,8 @@ angular.module('hours').controller('HoursController', ['$scope', '$stateParams',
         // Clear form fields
         $scope.title = '';
         $scope.content = '';
+        $scope.classesTaught = '';
+        $scope.office = '';
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });

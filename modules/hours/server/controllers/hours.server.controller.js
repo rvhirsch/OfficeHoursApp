@@ -41,6 +41,8 @@ exports.update = function (req, res) {
 
   hour.title = req.body.title;
   hour.content = req.body.content;
+  hour.classesTaught = req.body.classesTaught;
+  hour.office = req.body.office;
 
   hour.save(function (err) {
     if (err) {

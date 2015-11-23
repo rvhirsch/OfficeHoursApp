@@ -14,17 +14,17 @@
         </div>
 
         <div class="form-group" show-errors>
-          <label for="title">Classes Taught</label>
-          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="e.g. 'MATH 260, STS 375'" required>
-          <div ng-messages="hourForm.title.$error" role="alert">
+          <label for="classesTaught">Classes Taught</label>
+          <input name="classesTaught" type="text" ng-model="classesTaught" id="classesTaught" class="form-control" placeholder="e.g. 'MATH 260, STS 375'" required>
+          <div ng-messages="hourForm.classesTaught.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Classes are required.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label for="title">Office Building and Number</label>
-          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="e.g. 'TH 107, WY 210'" required>
-          <div ng-messages="hourForm.title.$error" role="alert">
+          <label for="office">Office Building and Number</label>
+          <input name="office" type="text" ng-model="office" id="office" class="form-control" placeholder="e.g. 'TH 107, WY 210'" required>
+          <div ng-messages="hourForm.office.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Classes are required.</p>
           </div>
         </div>

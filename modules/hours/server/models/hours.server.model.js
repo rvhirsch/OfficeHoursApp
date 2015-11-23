@@ -18,12 +18,24 @@ var HourSchema = new Schema({
     type: String,
     default: '',
     trim: true,
-    required: 'Title cannot be blank'
+    required: 'Name cannot be blank'
   },
   content: {
     type: String,
     default: '',
     trim: true
+  },
+  classesTaught: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'Classes cannot be blank'
+  },
+  office: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'Office cannot be blank'
   },
   user: {
     type: Schema.ObjectId,
