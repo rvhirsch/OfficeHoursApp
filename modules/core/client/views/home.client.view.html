@@ -13,9 +13,11 @@
     </div>
   </div>
   <div>
-    <h2>Welcome to the OnTheDoor Office Hours Lookup!</h2>
-    <a href="/getTimes" role="button">go to input page</a>
-    <p>Need a way to select specific teacher (or see all at once) -
+    <!-- <h2>Welcome to the OnTheDoor Office Hours Lookup!</h2> -->
+    <a href="/getTimes" role="button">go to possible-way-to-input-hours page</a>
+    <br>
+    <br>
+    <!-- <p>Need a way to select specific teacher (or see all at once) -
       maybe ability to select multiple teachers at once (like with google calendar).</p>
     <p>Need some kind of table/calendar here to display hours - this one is currently using my google account -
       if the school or whatever wanted to use this app they should set it up with their own calendar.</p>
@@ -146,7 +148,30 @@
         <td class="tocheck"> </td>
         <td class="tocheck"> </td>
       </tr>
-    </table>
-    <div><p></p></div>  <!-- for spacing at the bottom of the page -->
+    </table> -->
+
+    <!-- Displays all Inputted Hours -->
+    <section class="ng-scope" ng-controller="HoursController" ng-init="find()">
+      <div class="list-group">
+        <a ng-repeat="hour in hours" ui-sref="hours.view({hourId: hour._id})" class="list-group-item">
+          <small class="list-group-item-text">
+            Posted on
+            <span ng-bind="hour.created | date:'mediumDate'"></span>
+            by
+            <span ng-bind="hour.user.displayName"></span>
+          </small>
+          <h4 class="list-group-item-heading" ng-bind="hour.title"></h4>
+          <!-- <p class="list-group-item-text" ng-bind="hour.classesTaught"></p>
+          <p class="list-group-item-text" ng-bind="hour.office"></p>
+          <p class="list-group-item-text" ng-bind="hour.content"></p> -->
+          <p class="list-group-item-text">Classes Taught: {{hour.classesTaught}}</p>
+          <p class="list-group-item-text">Office: {{hour.office}}</p>
+          <p class="list-group-item-text">Hours: {{hour.content}}</p>
+        </a>
+      </div>
+      <div class="alert alert-warning text-center" ng-if="hours.$resolved && !hours.length">
+        No hours listed! Please <a ui-sref="hours.create">add some</a>?
+      </div>
+    </section>
   </div>
 </section>
