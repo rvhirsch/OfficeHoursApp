@@ -153,7 +153,18 @@
     <!-- Displays all Inputted Hours -->
     <section class="ng-scope" ng-controller="HoursController" ng-init="find()">
       <div class="list-group">
-        <a ng-repeat="hour in hours" ui-sref="hours.view({hourId: hour._id})" class="list-group-item">
+
+        <!-- Dropdown menu to select specific professor-->
+        <select id="dropdownButton">Teachers
+          <option>Select Professor</option>
+          <option ng-repeat="hour in hours">{{hour.title}}</option>
+        </select>
+        <br>
+        <br>
+
+        <!-- Need some way to only show specific prof's hours -->
+
+        <a ng-repeat="hour in hours" ui-sref="hours.view({hourId: hour._id})" class="list-group-item" id="showIfBlank">
           <small class="list-group-item-text">
             Posted on
             <span ng-bind="hour.created | date:'mediumDate'"></span>
@@ -168,6 +179,7 @@
           <p class="list-group-item-text">Office: {{hour.office}}</p>
           <p class="list-group-item-text">Hours: {{hour.content}}</p>
         </a>
+
       </div>
       <div class="alert alert-warning text-center" ng-if="hours.$resolved && !hours.length">
         No hours listed! Please <a ui-sref="hours.create">add some</a>?
