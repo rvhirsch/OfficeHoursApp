@@ -154,15 +154,25 @@
     <section class="ng-scope" ng-controller="HoursController" ng-init="find()">
       <div class="list-group">
 
-        <!-- Dropdown menu to select specific professor-->
-        <select id="dropdownButton">Teachers
+        <!-- Dropdown menu possibilities to select specific professor-->
+        <select class="selectButton">Teachers
           <option>Select Professor</option>
           <option ng-repeat="hour in hours">{{hour.title}}</option>
         </select>
         <br>
         <br>
 
-        <!-- Need some way to only show specific prof's hours -->
+        <form method="get">
+          <input list="hours" name="hour">
+          <datalist id="hours">
+            <option>Select Professor</option>
+            <option ng-repeat="hour in hours">{{hour.title}}</option>
+          </datalist>
+          <input type="submit" value="Select Professor" class="selectButton">
+        </form>
+        <br>
+
+        <!-- Need some way to only show specific profs hours -->
 
         <a ng-repeat="hour in hours" ui-sref="hours.view({hourId: hour._id})" class="list-group-item" id="showIfBlank">
           <small class="list-group-item-text">
