@@ -25,13 +25,16 @@
           <label for="office">Office Building and Number</label>
           <input name="office" type="text" ng-model="office" id="office" class="form-control" placeholder="e.g. 'TH 107, WY 210'" required>
           <div ng-messages="hourForm.office.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Classes are required.</p>
+            <p class="help-block error-text" ng-message="required">Office is required.</p>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" show-errors>
           <label for="content">Content</label>
-          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content" required></textarea>
+          <div ng-messages="hourForm.content.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hours are required.</p>
+          </div>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-default">

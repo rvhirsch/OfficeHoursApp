@@ -1,6 +1,6 @@
 <section ng-controller="HoursController" ng-init="find()">
   <div class="page-header">
-    <h1>Hours</h1>
+    <h1>Professor Office Hours</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="hour in hours" ui-sref="hours.view({hourId: hour._id})" class="list-group-item">
@@ -11,7 +11,12 @@
         <span ng-bind="hour.user.displayName"></span>
       </small>
       <h4 class="list-group-item-heading" ng-bind="hour.title"></h4>
-      <p class="list-group-item-text" ng-bind="hour.content"></p>
+      <!-- <p class="list-group-item-text" ng-bind="hour.classesTaught"></p>
+      <p class="list-group-item-text" ng-bind="hour.office"></p>
+      <p class="list-group-item-text" ng-bind="hour.content"></p> -->
+      <p class="list-group-item-text">Classes: {{hour.classesTaught}}</p>
+      <p class="list-group-item-text">Office: {{hour.office}}</p>
+      <p class="list-group-item-text">Hours: {{hour.content}}</p>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="hours.$resolved && !hours.length">
