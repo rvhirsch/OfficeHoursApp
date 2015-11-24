@@ -6,16 +6,37 @@
     <form name="hourForm" class="form-horizontal" ng-submit="update(hourForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="title">Title</label>
-          <input name="title" type="text" ng-model="hour.title" id="title" class="form-control" placeholder="Title" required>
+          <label for="title">Professor Name</label>
+          <input name="title" type="text" ng-model="hour.title" id="title" class="form-control" placeholder="e.g. 'Jane Smith'" required>
           <div ng-messages="hourForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Hour title is required.</p>
+            <p class="help-block error-text" ng-message="required">Name is required.</p>
           </div>
         </div>
-        <div class="form-group">
-          <label for="content">Content</label>
-          <textarea name="content" ng-model="hour.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+
+        <div class="form-group" show-errors>
+          <label for="classesTaught">Classes Taught</label>
+          <input name="classesTaught" type="text" ng-model="hour.classesTaught" id="classesTaught" class="form-control" placeholder="e.g. 'MATH 260, STS 375'" required>
+          <div ng-messages="hourForm.classesTaught.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Classes are required.</p>
+          </div>
         </div>
+
+        <div class="form-group" show-errors>
+          <label for="office">Office Building and Number</label>
+          <input name="office" type="text" ng-model="hour.office" id="office" class="form-control" placeholder="e.g. 'TH 107, WY 210'" required>
+          <div ng-messages="hourForm.office.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Office is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label for="content">Content</label>
+          <textarea name="content" ng-model="hour.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content" required></textarea>
+          <div ng-messages="hourForm.content.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hours are required.</p>
+          </div>
+        </div>
+
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
         </div>
