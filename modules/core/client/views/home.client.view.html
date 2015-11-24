@@ -162,10 +162,9 @@
         <br>
         <br>
 
-        <form method="get">
+        <form method="get" action=""> <!-- this should have a showProfHours(var prof) kind of method -->
           <input list="hours" name="hour">
           <datalist id="hours">
-            <option>Select Professor</option>
             <option ng-repeat="hour in hours">{{hour.title}}</option>
           </datalist>
           <input type="submit" value="Select Professor" class="selectButton">
