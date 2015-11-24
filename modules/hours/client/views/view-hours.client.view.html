@@ -1,6 +1,7 @@
 <section ng-controller="HoursController" ng-init="findOne()">
   <div class="page-header">
-    <h1 ng-bind="hour.title"></h1>
+    <!-- <h1 ng-bind="hour.title">Name: </h1> -->
+    <h1>{{hour.title}}</h1>
   </div>
   <div class="pull-right" ng-show="authentication.user._id == hour.user._id">
     <a class="btn btn-primary" ui-sref="hours.edit({hourId: hour._id})">
@@ -19,7 +20,13 @@
     </em>
   </small>
 
-  <p class="lead" ng-bind="hour.classesTaught"></p>
-  <p class="lead" ng-bind="hour.office"></p>
-  <p class="lead" ng-bind="hour.content"></p>
+  <!-- <p class="lead" ng-bind="hour.classesTaught">Classes Taught: </p>
+  <p class="lead" ng-bind="hour.office">Office: </p>
+  <p class="lead" ng-bind="hour.content">Hours: </p> -->
+  <h4>Classes Taught:</h4>
+  <p>{{hour.classesTaught}}</p>
+  <h4>Office:</h4>
+  <p>{{hour.office}}</p>
+  <h4>Hours:</h4>
+  <p>{{hour.content}}</p>
 </section>
